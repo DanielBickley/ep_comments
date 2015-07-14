@@ -15,7 +15,7 @@
                 <span class="comment-changeFrom-value">${changeFrom}</span>
             </p>
             <p class="comment-changeTo">
-                <span class="comment-changeTo-label" data-l10n-id="ep_comments_page.comments_template.suggested_change">Suggested Change:</span>
+                <span class="comment-changeTo-label" data-l10n-id="ep_comments_page.comments_template.suggested_change">Suggested change:</span>
                 <span class="comment-changeTo-value">${changeTo}</span>
             </p>
             <p class="comment-changeTo-approve">
@@ -25,7 +25,7 @@
         {{/if}}
         <form class='comment-reply'>
             <label class='comment-reply-input-label'>
-                <span data-l10n-id="ep_comments_page.comments_template.reply_input_label">Your Reply (hit ENTER to send)</span>
+                <span data-l10n-id="ep_comments_page.comments_template.reply_input_label">Your reply:</span>
                 <input class='comment-reply-input'>
             </label>
             <p class="reply-comment-suggest">
@@ -44,13 +44,18 @@
             </span>
             <!-- for test purposes only -->
             <input type="submit" style="display:none">
+            
+            <p class="comment-buttons">
+            	<input type="submit" value="Comment" data-l10n-id="ep_comments_page.comments_template.comment.value" />
+        	</p>
+        
         </form>
     </div>
 </script>
 
 <script id="newCommentTemplate" type="text/html">
     <form id="newComment" class="sidebar-comment">
-    	<p class="comment-author-name">${name}</p>
+    	<!--<p class="comment-author-name">${name}</p>-->
         <p data-l10n-id="ep_comments_page.comment">Comment</p>
     	<p class="comment-text">
             <textarea class="comment-content" autofocus></textarea>
@@ -61,7 +66,7 @@
             <label for="suggestion-checkbox" data-l10n-id="ep_comments_page.comments_template.include_suggestion">Include suggested change</label>
         </p>
         <span class="suggestion">
-            <p data-l10n-id="ep_comments_page.comments_template.suggest_change_from">Suggest Change From:</p>
+            <p data-l10n-id="ep_comments_page.comments_template.suggest_change_from">Suggest change from:</p>
             <p class="comment-suggest-from-p">
                 <textarea class="comment-suggest-from" disabled="disabled"></textarea>
             </p>
@@ -86,7 +91,7 @@
         {{if changeTo}}
         <form class="comment-changeTo-form">
             <p class="comment-changeTo">
-                <span class="comment-changeTo-label" data-l10n-id="ep_comments_page.comments_template.suggested_change_from">Suggested Change From:</span>
+                <span class="comment-changeTo-label" data-l10n-id="ep_comments_page.comments_template.suggested_change_from">Suggested change from:</span>
                 <p class="reply-comment-suggest-from-p">
                   <span class="comment-changeFrom-value">${changeFrom}</span>
                 </p>

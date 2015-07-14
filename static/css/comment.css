@@ -1,3 +1,7 @@
+:focus{
+	outline: 0;
+}
+
 note{
   display:block;
 }
@@ -9,11 +13,12 @@ note{
 
 .comment-delete-container{
   margin-left:160px;
+  margin-bottom: 8px;
   height: 15px;
-  background-color:#c6c6c6;
+  background-color:#996666;
   text-align:center;
   line-height:14px;
-  color:#666;
+  color: #ffffff;
   display:none;
   -webkit-user-select: none; /* Chrome/Safari */
   -moz-user-select: none; /* Firefox */
@@ -104,13 +109,35 @@ time{
 }
 
 .sidebar-comment-reply{
-  padding-top:5px;
-  padding-left:10px;
-  margin-bottom: 5px;
+  position: relative;
+  padding: 5px 6px 5px 8px;
+  margin: 14px 0 10px 0;
+  color: #333333;
+  background-color:#f4f4f4;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
+.sidebar-comment-reply:after{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -20px;
+  left: 10px;
+  border: 15px solid transparent;
+  border-bottom-color: #f4f4f4;
+  display: block;
+  width: 0;
+}  
+
 .sidebar-comment-reply:nth-child(even){
-  background-color:#f1f1f1;
+  background-color: #e5e5e5;
+}
+
+.sidebar-comment-reply:nth-child(even):after{
+  border-bottom-color: #e5e5e5;
+
 }
 
 .comment-reply{
@@ -119,7 +146,7 @@ time{
 }
 
 .comment-reply-input{
-  margin-top:10px;
+  margin-top:2px;
   width:187px;
 }
 
@@ -161,8 +188,8 @@ time{
 }
 
 .comment-reply, .suggestion{
-  font-weight:bold;
-  color:#555
+  /*font-weight:bold;*/
+  color:#666666;
 }
 .reply-suggestion .reply-comment-suggest-from, .suggestion .comment-suggest-from, .comment-changeTo-value, .comment-changeFrom-value{
   font-weight: normal;
@@ -196,8 +223,34 @@ time{
   font-size:12px;
 }
 
+
+
 .sidebar-comment input[type=submit]{
-  padding:2px;
+  color: #fff;
+  border: 0px solid #DDD;
+  background: #00b8d4;
+  padding: 2px 6px 2px 6px;
+  font-size: 10px;
+}
+
+.sidebar-comment input[type=submit]:hover {
+  background: #0097a7;
+  cursor: pointer;
+}
+
+p.comment-changeTo-approve input.revert,
+p.comment-reply-changeTo-approve input.revert {
+	background: #ffab00;
+}
+
+p.comment-changeTo-approve input.revert:hover,
+p.comment-reply-changeTo-approve input.revert:hover{
+	background: #eb9e00;
+}
+
+.comment-reply-input-label{
+	display: block;
+	margin: 12px 0 0 0;
 }
 
 .sidebar-comment:hover,
@@ -206,7 +259,6 @@ time{
 }
 
 .sidebar-comment.mouseover {
-
   z-index:99999;
   margin: 0px 0 0 14px;
   white-space:normal;
@@ -216,6 +268,7 @@ time{
   -ms-transition: z-index 100ms ease-in, margin 100ms ease-in, background 100ms ease-in;
   -o-transition: z-index 100ms ease-in, margin 100ms ease-in, background 100ms ease-in;
   transition: z-index 100ms ease-in, margin 100ms ease-in, background 100ms ease-in;
+  line-height: 12px;
 }
 
 .comment-author-name {
@@ -225,16 +278,45 @@ time{
   display:inline;
 }
 
-.comment-changeTo-label, .comment-changeFrom-label{
+.comment-changeTo-form{
+	margin: 10px 0 0 0;
+}
+
+.comment-changeTo-form p{
+	margin: 3px 0 2px 0;
+	font-weight: bold;
+}
+
+.comment-changeTo-form p span{
+	font-weight: normal;
+}
+
+.comment-changeTo-label, 
+.comment-changeFrom-label{
   color: #555;
-  font-weight:bold;
+  font-weight:bold !important;
   font-size: 1em;
   display:inline;
 }
 
+.reply-suggestion.active p{
+	font-weight:bold;
+	line-height: 14px;
+}
+
+.reply-suggestion.active p span{
+	font-weight:normal;
+}
+
+.reply-comment-suggest-from-p{
+	margin-bottom: 5px;
+}
+
 .comment-text {
   font-size: 1em;
-  color: #333;
+  font-style: italic;
+  line-height: 14px;
+  color: #777777;
   word-wrap: break-word;
   white-space: normal;
   display: inline;
@@ -257,12 +339,12 @@ time{
 }
 
 .comment-buttons input {
-  color: #666;
-  border: 2px solid #DDD;
-  background: #EEE;
+  color: #fff;
+  border: 0px solid #DDD;
+  background: #00b8d4;
   width: 59px;
-  height: 30px;
-  font-size:12px;
+  height: 24px;
+  font-size:12px !important;
 }
 
 .comment-buttons input[type="submit"] {
@@ -271,7 +353,7 @@ time{
 }
 
 .comment-buttons input:hover {
-  color: #333;
+  background: #0097a7;
   cursor: pointer;
 }
 
@@ -346,8 +428,15 @@ time{
   display:none;
 }
 
+.reply-comment-suggest{
+	margin: 10px 0 10px 0;
+}
+
 .sidebar-comment-reply input{
-  margin-bottom:10px;
+  margin-bottom: 2px;
 /*  margin-left:40px; */
 }
 
+input[type=checkbox] {
+  vertical-align: 0px;
+}
